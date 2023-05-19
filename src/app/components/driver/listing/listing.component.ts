@@ -31,6 +31,9 @@ export class ListingComponent {
     this.LoadDrivers();
   }
 
+  /**
+    * Store drivers in drivers List
+    */
   LoadDrivers() {
     this.driversList = [];
     this.service.GetAll().subscribe((res) => {
@@ -39,10 +42,16 @@ export class ListingComponent {
     });
   }
 
+  /**
+   * Navigate to edit form
+   */
   EditDriver(driverId: any) {
     this.router.navigateByUrl('/edit/' + driverId);
   }
 
+  /**
+    * Remove driver from table
+    */  
   RemoveDriver(driverId: any) {
     if (confirm('Do you want to remove this Driver ?')) {
       this.service.Remove(driverId).subscribe((res) => {
@@ -56,6 +65,9 @@ export class ListingComponent {
     window.location.reload();
   }
 
+  /**
+    * Save id of alphabetized user
+    */
   Alphabetize(id: string) {
     this.alphabetizedDriverId = id;
   }

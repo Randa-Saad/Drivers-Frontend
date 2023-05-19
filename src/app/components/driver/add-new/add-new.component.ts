@@ -17,6 +17,9 @@ export class AddNewDriverComponent {
   editdata: any;
   editMode: boolean = false;
 
+  /**
+    * Constructor
+    */  
   constructor(private service: DriverService, private route: ActivatedRoute) {
     this.driverId = this.route.snapshot.paramMap.get('id');
     if (this.driverId != null) {
@@ -36,6 +39,9 @@ export class AddNewDriverComponent {
     phoneNumber: new FormControl('', Validators.required),
   });
 
+  /**
+    * Add or update Driver
+    */  
   SaveDriver() {
     if (this.driverForm.valid) {
       debugger;
@@ -74,6 +80,9 @@ export class AddNewDriverComponent {
     }
   }
 
+  /**
+    * Reset Driver form 
+    */
   resetForm() {
     this.driverForm = new FormGroup({
       id: new FormControl(0),
@@ -84,6 +93,9 @@ export class AddNewDriverComponent {
     });
   }
 
+  /**
+    * Set Driver Data on driverForm to update
+    */  
   setDriverData(id: any) {
     this.service.GetById(id).subscribe((data) => {
       this.editdata = data;

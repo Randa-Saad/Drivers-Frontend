@@ -1,0 +1,38 @@
+<div class="card">
+  <br />
+  <h3>Drivers</h3>
+  <br />
+  <div class="card-header">
+    <a class="btn btn-success" routerLink="add">New [+]</a>
+  </div>
+  <div class="card-body text-center">
+    <p>Note: You can sort any column by clicking on its header</p>
+    <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger" class="table table-bordered ">
+
+      <thead class="bg-dark text-white">
+        <tr>
+          <td>First Name</td>
+          <td>Last Name</td>
+          <td>Email</td>
+          <td>Phone</td>
+          <td>Action</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of driversList">
+          <td *ngIf="item.id != alphabetizedDriverId">{{ item.firstName }}</td>
+          <td *ngIf="item.id != alphabetizedDriverId">{{ item.lastName }}</td>
+          <td *ngIf="item.id === alphabetizedDriverId">{{ item.firstName | alphabetize }}</td>
+          <td *ngIf="item.id === alphabetizedDriverId">{{ item.lastName | alphabetize }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.phoneNumber }}</td>
+          <td>
+            <a class="btn btn-primary" (click)="EditDriver(item.id)">Edit</a> |
+            <a class="btn btn-danger" (click)="RemoveDriver(item.id)">Delete</a> |
+            <a class="btn btn-success" (click)="Alphabetize(item.id)">Alphabetize</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

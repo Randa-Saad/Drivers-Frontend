@@ -1,0 +1,65 @@
+<div class="card-box">
+    <form [formGroup]="driverForm" (ngSubmit)="SaveDriver()">
+        <div class="row">
+            <h2 style="text-align: center">Add/Edit Driver</h2>
+        </div>
+
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label for="txtname">First Name</label>
+                    <input type="text" id="txtfirstname" class="form-control" formControlName="firstName"
+                        autocomplete="off" />
+                    <span *ngIf="firstName && firstName.invalid && firstName.touched" class="text-danger">Please enter
+                        data</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label for="txtname">Last Name</label>
+                    <input type="text" id="txtlastname" class="form-control" formControlName="lastName"
+                        autocomplete="off" />
+                    <span *ngIf="lastName && lastName.invalid && lastName.touched" class="text-danger">Please enter
+                        data</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label for="txtemail">Email</label>
+                    <input type="text" id="txtemail" class="form-control" formControlName="email" autocomplete="off" />
+                    <span *ngIf="email && email.invalid && email.touched" class="text-danger">Please enter valid
+                        Email</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label for="txtphonenumber">Phone</label>
+                    <input type="text" id="txtphonenumber" class="form-control" formControlName="phoneNumber"
+                        autocomplete="off" />
+                    <span *ngIf="phoneNumber && phoneNumber.invalid && phoneNumber.touched" class="text-danger">Please
+                        enter Phone</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-2">
+                <br />
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">
+                        Submit
+                    </button>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <br />
+                <span class="{{ messageclass }}">{{ message }}</span>
+            </div>
+        </div>
+    </form>
+</div>

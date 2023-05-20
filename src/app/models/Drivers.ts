@@ -32,8 +32,8 @@ export const DriversData: Driver[]= [
         "phoneNumber": "(552) 475-0214"
     },
     {
-        "firstName": "Aline Byers",
-        "lastName": "Evan Pace",
+        "firstName": "AlineByers",
+        "lastName": "EvanPace",
         "email": "alinebyers@icloud.edu",
         "phoneNumber": "1-413-864-3442"
     },
@@ -176,8 +176,8 @@ export const DriversData: Driver[]= [
         "phoneNumber": "1-445-820-8333"
     },
     {
-        "firstName": "Ayanna Walls",
-        "lastName": "Urielle Diaz",
+        "firstName": "AyannaWalls",
+        "lastName": "UrielleDiaz",
         "email": "ayannawalls@protonmail.net",
         "phoneNumber": "(758) 188-3122"
     },
@@ -254,8 +254,8 @@ export const DriversData: Driver[]= [
         "phoneNumber": "1-227-227-5643"
     },
     {
-        "firstName": "Darius Dennis",
-        "lastName": "Chase Clark",
+        "firstName": "DariusDennis",
+        "lastName": "ChaseClark",
         "email": "dariusdennis@yahoo.org",
         "phoneNumber": "(366) 393-1651"
     },
@@ -536,8 +536,8 @@ export const DriversData: Driver[]= [
         "phoneNumber": "1-925-487-1358"
     },
     {
-        "firstName": "Stacy Reynolds",
-        "lastName": "Cairo Fuentes",
+        "firstName": "StacyReynolds",
+        "lastName": "CairoFuentes",
         "email": "stacyreynolds487@aol.net",
         "phoneNumber": "1-835-746-2421"
     },

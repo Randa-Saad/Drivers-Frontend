@@ -9,10 +9,11 @@ import { DriverService } from 'src/app/services/driver.service';
   styleUrls: ['./listing.component.css'],
 })
 export class ListingComponent {
-  constructor(private service: DriverService, private router: Router) {}
+  constructor(private service: DriverService, private router: Router) { }
 
   @ViewChild('content') popupview!: ElementRef;
 
+  responsedata: any;
   driversList: any;
   alphabetizedDriverId: string | undefined;
   alertmessage: string = '';
@@ -38,6 +39,7 @@ export class ListingComponent {
     this.driversList = [];
     this.service.GetAll().subscribe((res) => {
       this.driversList = res;
+      console.log("res", res);
       this.dtTrigger.next(null);
     });
   }
@@ -51,7 +53,7 @@ export class ListingComponent {
 
   /**
     * Remove driver from table
-    */  
+    */
   RemoveDriver(driverId: any) {
     if (confirm('Do you want to remove this Driver ?')) {
       this.service.Remove(driverId).subscribe((res) => {
@@ -71,4 +73,5 @@ export class ListingComponent {
   Alphabetize(id: string) {
     this.alphabetizedDriverId = id;
   }
+
 }

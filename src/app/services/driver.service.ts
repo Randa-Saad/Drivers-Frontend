@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Driver } from '../models/Driver';
 import { environment } from 'src/environments/environment';
 import { Response } from '../models/Response';
+import { DriversData } from '../models/Drivers';
 
 const baseUrl = environment.apiUrl;
 
@@ -23,6 +24,10 @@ export class DriverService {
 
   Remove(id: any): Observable<Response> {
     return this.http.delete(`${baseUrl}?id=${id}`);
+  }
+
+  AddBulk(): Observable<Response> {
+    return this.http.post(`${baseUrl}/AddBulk`, DriversData);
   }
 
   GetAll(): Observable<any> {

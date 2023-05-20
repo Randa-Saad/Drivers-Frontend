@@ -19,7 +19,7 @@ export class AddNewDriverComponent {
 
   /**
     * Constructor
-    */  
+    */
   constructor(private service: DriverService, private route: ActivatedRoute) {
     this.driverId = this.route.snapshot.paramMap.get('id');
     if (this.driverId != null) {
@@ -29,7 +29,7 @@ export class AddNewDriverComponent {
     }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   driverForm = new FormGroup({
     id: new FormControl(0),
@@ -41,7 +41,7 @@ export class AddNewDriverComponent {
 
   /**
     * Add or update Driver
-    */  
+    */
   SaveDriver() {
     if (this.driverForm.valid) {
       debugger;
@@ -95,7 +95,7 @@ export class AddNewDriverComponent {
 
   /**
     * Set Driver Data on driverForm to update
-    */  
+    */
   setDriverData(id: any) {
     this.service.GetById(id).subscribe((data) => {
       this.editdata = data;
@@ -107,6 +107,25 @@ export class AddNewDriverComponent {
         email: new FormControl(this.editdata.email),
         phoneNumber: new FormControl(this.editdata.phoneNumber),
       });
+    });
+  }
+
+  /**
+   * Insert list of 100 names
+   */
+  insertBulkRecords() {
+    this.service.AddBulk().subscribe((result) => {
+      if (result != null) {
+        this.responsedata = result;
+        debugger;
+        if (this.responsedata[0].result) {
+          this.message = `Drivers added successfully`;
+          this.messageclass = 'text-success';
+        } else {
+          this.message = 'Failed to Save';
+          this.messageclass = 'text-danger';
+        }
+      }
     });
   }
 

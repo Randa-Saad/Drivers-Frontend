@@ -11,12 +11,12 @@ import { DriverService } from 'src/app/services/driver.service';
 export class ListingComponent {
   constructor(private service: DriverService, private router: Router) { }
 
-  @ViewChild('content') popupview!: ElementRef;
+  //@ViewChild('content') popupview!: ElementRef;
 
   responsedata: any;
   driversList: any;
   alphabetizedDriverId: string | undefined;
-  alertmessage: string = '';
+  //alertmessage: string = '';
   dtoptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
 
@@ -24,7 +24,7 @@ export class ListingComponent {
     this.dtoptions = {
       pagingType: 'numbers',
       searching: true,
-      lengthChange: false,
+      lengthChange: true,
       language: {
         searchPlaceholder: ' Type here...',
       },

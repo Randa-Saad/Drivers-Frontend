@@ -1,4 +1,4 @@
-export class Response {
+export interface Response {
     result?: string;
     KeyValue?: string;
 }
